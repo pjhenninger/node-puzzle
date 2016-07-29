@@ -17,7 +17,7 @@ var PuzzlePiece = (function () {
 }());
 exports.PuzzlePiece = PuzzlePiece;
 function getRandomColor() {
-    var keys = Object.keys(PieceColor), index = Math.floor(Math.random() * keys.length), k = keys[index];
+    var keys = Object.keys(PieceColor), index = Math.floor(Math.random() * (keys.length / 2)), k = keys[index];
     if (typeof PieceColor[k] === 'number')
         return PieceColor[k];
     return PieceColor[parseInt(k, 10)];
