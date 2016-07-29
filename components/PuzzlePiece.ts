@@ -13,5 +13,14 @@ export class PuzzlePiece{
 
     constructor(color:PieceColor){
         this.Color = color;
-    }
+    }     
 }
+
+export function getRandomColor() : PieceColor {
+        var keys = Object.keys(PieceColor),
+            index = Math.floor(Math.random() * keys.length),
+            k = keys[index];
+        if (typeof PieceColor[k] === 'number')
+            return PieceColor[k];
+        return (<any>PieceColor)[parseInt(k, 10)];
+    }

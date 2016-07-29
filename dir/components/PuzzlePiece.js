@@ -16,4 +16,11 @@ var PuzzlePiece = (function () {
     return PuzzlePiece;
 }());
 exports.PuzzlePiece = PuzzlePiece;
+function getRandomColor() {
+    var keys = Object.keys(PieceColor), index = Math.floor(Math.random() * keys.length), k = keys[index];
+    if (typeof PieceColor[k] === 'number')
+        return PieceColor[k];
+    return PieceColor[parseInt(k, 10)];
+}
+exports.getRandomColor = getRandomColor;
 //# sourceMappingURL=PuzzlePiece.js.map
