@@ -1,6 +1,7 @@
 // connect to the socket
 var socket = io();
-var board = $("#puzzle-container");
+var board = $("#puzzle-board");
+var puzzlePieces = $("#puzzle-board-pieces");
 var puzzleEmpty = true;
 
 socket.on('connect', function () { 
@@ -20,7 +21,7 @@ socket.on('receivePuzzle', function(data){
                 piece.appendChild(img);
                 //piece.style.top = (i*pieceSize).toString() +"px";
                 //piece.style.left = (j*pieceSize).toString() +"px";
-                board.append(piece);
+                puzzlePieces.append(piece);
             }
         }
     puzzleEmpty = false;

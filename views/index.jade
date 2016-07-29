@@ -1,8 +1,9 @@
 extends layout
 
 block content
-  div#puzzle-container.container
-
+  div#puzzle-board.container
+    div#puzzle-board-header.container
+    div#puzzle-board-pieces.container
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
   script(src="/socket.io/socket.io.js")
   script(src="/javascripts/puzzle-client.js")
