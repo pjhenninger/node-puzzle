@@ -22,7 +22,25 @@ socket.on('receivePuzzle', function(data){
                 //piece.style.top = (i*pieceSize).toString() +"px";
                 //piece.style.left = (j*pieceSize).toString() +"px";
                 puzzlePieces.append(piece);
+
+                $('.puzzle-piece').draggable({
+                    cursor: 'move',
+                    //start: justLog,
+                    drag: updateElements
+                    //stop: justLog
+                });
             }
         }
     puzzleEmpty = false;
 });
+
+var updateElements = function (event, ui) {
+  var elem = $(event.target);  
+};
+
+$('.puzzle-piece').draggable({
+    cursor: 'move',
+    //start: justLog,
+    drag: updateElements
+    //stop: justLog
+   });
